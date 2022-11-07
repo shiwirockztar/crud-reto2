@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Crud reto 2 - Registro</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Sweet Alert animate.css CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Crea una Cuenta!</h1>
+                            </div>
+                            <form class="formulario">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id='textName'
+                                            placeholder="Nombre" name="name" pattern="[a-zA-Z0-9]{1,35}" maxlength="35" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id='textSurName'
+                                            placeholder="Apellido" name="surName"pattern="[a-zA-Z0-9]{1,35}" maxlength="35" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id='textEmail'
+                                        placeholder="Correo" name="email"pattern="[a-zA-Z0-9$@.-]{7,100}" maxlength="100"  required>
+                                    <span id="status"></span>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user"
+                                            id='textPassword' placeholder="Contraseña" pattern="[a-zA-Z0-9$@.-]{4,100}" maxlength="100" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user"
+                                            id='repeatPassword' placeholder="Repetir contraseña"pattern="[a-zA-Z0-9$@.-]{4,100}" maxlength="100" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user"
+                                               id='textCity' name="city"placeholder="Ciudad" pattern="[a-zA-Z0-9]{1,35}" maxlength="10" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user"
+                                               id='textAddress'  placeholder="Direccion" pattern="[a-zA-Z0-9]{1,35}" maxlength="10" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div onclick="selected()" class="col-sm-6 mb-3 mb-sm-0" id="docType">
+                                        <a href="#" class="btn btn-info btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-info-circle"></i>
+                                        </span>
+                                            <span class="text">Documento de identidad</span>
+                                        </a>
+
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user"
+                                               id='textDocument' placeholder="Numero" pattern="[a-zA-Z0-9]{1,35}" maxlength="10" required="">
+                                    </div>
+                                </div>
+
+                                <!--<a type="submit" onclick="registerUser()" href="#" class="btn btn-primary btn-user btn-block">-->
+                                <a type="submit" id="register"  href="#" class="btn btn-primary btn-user btn-block">
+                                    Registrar Cuenta
+                                </a>
+
+                                <hr>
+                                <a href="#" class="btn btn-google btn-user btn-block">
+                                    <i class="fab fa-google fa-fw"></i> Registro con Google
+                                </a>
+                                <a href="#" class="btn btn-facebook btn-user btn-block">
+                                    <i class="fab fa-facebook-f fa-fw"></i> Registero con Facebook
+                                </a>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="forgot-password.html">Olvide la contraseña?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="index.html">Tengo cuenta, Iniciar seccion!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--=============================================
+    =            Include JavaScript files           =
+    ==============================================-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/register.js"></script>
+
+    <!-- Sweet Alert jsdelivr CDN -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
